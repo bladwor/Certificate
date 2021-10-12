@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="title">Подарочные сертификаты</div>
+    <div class="content">
+		{% for post in posts %}
+    	<div class="content-link">
+			<a class="link" href="/certificat/{{ post.pk }}/"><img src="/media/{{ post.image }}" alt=""></a>
+			<div class="info">{{ post.title }}<a class="btn" href="/certificat/{{ post.pk }}/">Купить сертификат</a></div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
