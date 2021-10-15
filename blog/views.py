@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, get_object_or_404
+from django.shortcuts import redirect, render, HttpResponse, get_object_or_404
 from django.views import View
 
 from .models import Post
@@ -41,7 +41,7 @@ class Certificat_page(View):
 class Politic_page(View):
     @staticmethod
     def get(request, *args, **kwargs):
-        return render(request, 'blog/politic.html')
+        return redirect('/static/pol_isp.pdf')
 
 
 class Success_page(View):

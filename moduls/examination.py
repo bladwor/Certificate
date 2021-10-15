@@ -28,13 +28,13 @@ class Examination:
                         Message.message_true(code_reserv[code],
                                              servise_name['service_name'],
                                              last_order[order]['clientid'],
-                                             last_order[order]['pay_amount'],
+                                             last_order[order]['pay_amount'][:-3],
                                              servise_name['client_email'],
                                              )
                         Message.message_true_service(code_reserv[code],
                                              servise_name['service_name'],
                                              last_order[order]['clientid'],
-                                             (last_order[order]['pay_amount']),
+                                             (last_order[order]['pay_amount'][:-3]),
                                              servise_name['client_email'],
                                              servise_name['client_phone'],
                                              )

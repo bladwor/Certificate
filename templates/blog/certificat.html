@@ -1,53 +1,56 @@
-{% extends 'blog/base.html' %}
-
-{% block content %}
+{% extends 'blog/base.html' %} {% block content %}
 <div class="container">
-	<div class="title">{{ post.title }}</div>
-	<div class="certificate-wrap">
-		<img class="certificate-img" src="/media/{{ post.image }}" alt="">
-		<div class="certificate-item">{{ post.body|safe }}</div>
-	</div>
+    <div class="title">{{ post.title }}</div>
+    <div class="certificate-wrap">
+        <div class="certificat-div">
+            <img class="certificate-img" src="/media/{{ post.image }}" alt="">
+        </div>
+        <div class="certificat-div">
+            <div class="certificate-item">{{ post.body|safe }}</div>
+        </div>
+    </div>
 
 </div>
 {% load static %}
 <div class="container">
-	<form method='POST' action='https://turandotpalace.server.paykeeper.ru/create/'>
-		<div class="active">
-			<label class="label" for="sum">СУММА ОПЛАТЫ</label>
-			<input class="sum" type='text' name='sum' value='{{ post.price }}' readonly />
-		</div>
-		<fieldset class="contact-form">
-			<legend class="form-title">Контактные данные</legend>
-			<div class="form-info">Для совершения корректного платежа, укажите свои контактные данные. Необходимо заполнить все поля!</div>
-			<div class="form-wrap">
-				<div class="form">
-					<label class="label">Фамилия и Имя: *</label>
-					<input class="write" type='text' name='clientid' value='' required="required" />
-				</div>
-				<div class="form">
-					<label class="label">Email: *</label>
-					<input class="write" type='text' name='client_email' value='' required="required" />
-				</div>
-				<div class="form">
-					<label class="label">Ваш телефон: *</label>
-					<input class="write" type='text' name='client_phone' value='' required="required" />
-				</div>
-				<div class="form" style="display: none;">
-					<label class="label">orderid</label>
-					<input class="write" type='text' name='orderid' value='{{ code }}' />
-				</div>
-				<div class="form" style="display: none;">
-					<label class="label">service_name</label>
-					<input class="write" type='text' name='service_name' value='{{ post.title }}' />
-				</div>
-			</div>
-		</fieldset>
-		<input type='submit' class="btn btn-form" value='Перейти к оплате' />
+    <form method='POST' action='https://turandotpalace.server.paykeeper.ru/create/'>
+        <div class="active">
+            <label class="label" for="sum">СУММА ОПЛАТЫ</label>
+            <input class="sum" type='text' name='sum' value='{{ post.price }}' readonly />
+        </div>
+        <fieldset class="contact-form">
+            <legend class="form-title">Контактные данные</legend>
+            <div class="form-info">Для совершения корректного платежа, укажите свои контактные данные. Необходимо заполнить все поля!</div>
+            <div class="form-wrap">
+                <div class="form">
+                    <label class="label">Фамилия и Имя: *</label>
+                    <input class="write" type='text' name='clientid' value='' required="required" />
+                </div>
+                <div class="form">
+                    <label class="label">Email: *</label>
+                    <input class="write" type='text' name='client_email' value='' required="required" />
+                </div>
+                <div class="form">
+                    <label class="label">Ваш телефон: *</label>
+                    <input class="write" type='text' name='client_phone' value='' required="required" />
+                </div>
+                <div class="form" style="display: none;">
+                    <label class="label">orderid</label>
+                    <input class="write" type='text' name='orderid' value='{{ code }}' />
+                </div>
+                <div class="form" style="display: none;">
+                    <label class="label">service_name</label>
+                    <input class="write" type='text' name='service_name' value='{{ post.title }}' />
+                </div>
+            </div>
+        </fieldset>
+        <input type='submit' class="btn btn-form" value='Перейти к оплате' />
 
-	</form>
-	<div class="agreement">
-		Нажимая кнопку «Продолжить оформление», Вы принимаете условия
-		<a class="link" href="https://turandot-palace.ru/soglashenie/polzovatelskoe-soglashenie-17-11-15.pdf">пользовательского соглашения</a>
-	</div>
-	<div class="currency"><img src="{% static 'site/img/logo-pay.png' %}" alt=""></div>
-		{% endblock %}
+    </form>
+    <div class="agreement">
+        Нажимая кнопку «Продолжить оформление», Вы принимаете условия
+        <a class="link" href="{% url 'politic' %}">пользовательского соглашения</a>
+    </div>
+    <div class="currency"><img src="{% static 'site/img/logo-pay.png' %}" alt=""></div>
+</div>
+{% endblock %}

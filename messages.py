@@ -3,7 +3,7 @@ import email.message
 
 
 class Message:
-    def sert_mail(code, name_cert, name, price, mail):
+    def message_true(code, name_cert, name, price, mail):
 
         email_content = """
             <html>
@@ -989,7 +989,7 @@ class Message:
                                                                                                     </p>
                                                                                                     <p style="text-align:left!important;">Вы можете воспользоваться им
                                                                                                         в течение года с момента
-                                                                                                        покупки (<a href="#">условия
+                                                                                                        покупки (<a href="https://turandotpalace.ru/static/pol_isp.pdf">условия
                                                                                                             покупки и
                                                                                                             использования</a>).</p>
                                                                                                     <p style="text-align:left!important;">
@@ -1256,11 +1256,37 @@ class Message:
 
         s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))
 
+    def message_true_service(code, name_cert, clientid, price, mail, phone):
 
-code = '400009'
-name_cert = 'Сертификат на посещения ресторана Турандот'
-name = 'Дмитрий Воронов'
-price = '10000.00'
-mail = 'dmitriy.woronow@gmail.com'
+        text = (f"Был приобретен {name_cert} №{code} номиналом {price} руб. <br>"
+                f"Данные покупателя: <br>"
+                f"{clientid} <br>"
+                f"{phone} <br>"
+                f"{mail} <br>")
+        email_content = '<html><head></head><body><p>' + text + '</p></body></html>'
 
-Message.sert_mail(code, name_cert, name, price[:-3], mail)
+        msg = email.message.Message()
+        msg['Subject'] = f'Приобретен {name_cert} №{code}'
+
+        msg['From'] = "hostmaster@turandot-palace.ru"
+        msg['To'] = mail
+        password = "ERqomcPr2njK8X"
+        msg.add_header('Content-Type', 'text/html')
+        msg.set_payload(email_content)
+
+        s = smtplib.SMTP('smtp-pulse.com:587')
+        s.starttls()
+
+        # Login Credentials for sending the mail
+        s.login(msg['From'], password)
+
+        s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))        
+
+
+# code = '400009'
+# name_cert = 'Сертификат на посещения ресторана Турандот'
+# name = 'Дмитрий Воронов'
+# price = '10000.00'
+# mail = 'dmitriy.woronow@gmail.com'
+
+# Message.sert_mail(code, name_cert, name, price[:-3], mail)

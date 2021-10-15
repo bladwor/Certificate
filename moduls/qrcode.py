@@ -6,6 +6,3 @@ class QRcode:
         path = ('/var/www/html/')
         type(img)
         img.save(f"/home/sammy/certificat/qrimg/{code}.png")
-        img.save(f"{code}.png")
-        
-        print(code)
