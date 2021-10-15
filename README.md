@@ -1,7 +1,7 @@
 # Сервис по покупке сертификатов. 
 <p align="center">
   
-<img src="https://img.shields.io/badge/python-v3.8-blue">
+<img src="https://img.shields.io/badge/python-v3.8-blue?style=for-the-badge">
 </p>
 ---
 <p>
