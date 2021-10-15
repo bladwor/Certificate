@@ -12,4 +12,17 @@
     <li>Генерация Qr-кодов</li>
     <li>Взаимодействие с БД SQL 2019 MS</li>
     <li>Работа с эквайринговой системой электронных платежей Paykiper</li>
+    <li>Публикация и редактирование информации по сертификата (в виде постов)</li>
 </ol>
+<p>
+    pip list
+</p>
+    <li>Django               3.2.8</li>li>
+    <li>django-ckeditor      6.1.0</li>li>
+    <li>django-debug-toolbar 3.2.2</li>li>
+    <li>gunicorn             20.1.0</li>li>
+    <li>Pillow               8.3.2</li>li>
+    <li>pyodbc               4.0.32</li>li>
+    <li>qrcode               7.3.1</li>li>
+    <li>requests             2.26.0</li>li>
+</ul>
