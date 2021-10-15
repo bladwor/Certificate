@@ -2,7 +2,7 @@
 <p align="center">
 <img src="https://img.shields.io/badge/python-v3.8-blue?style=for-the-badge">
 <img src="https://img.shields.io/badge/django%20versions-3.0-blue?style=for-the-badge" alt="">
-<img src="https://img.shields.io/badge/SQL-MS--2019-blue" alt="">
+<img src="https://img.shields.io/badge/SQL-MS--2019-blue?style=for-the-badge" alt="">
 </p>
 <p>
     В проекте есть следующие модули:
