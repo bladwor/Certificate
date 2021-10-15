@@ -1,9 +1,18 @@
 from django.contrib import admin
+from django import forms
 from .models import Post
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
+
+
+class PostAdminForm(forms.ModelForm):
+    body = forms.CharField(widget=CKEditorUploadingWidget())
+
+    class Meta:
+        model = Post
+        fields = '__all__'
 
 class PostAdmin(admin.ModelAdmin):
     list_display = (
-        'id',
         'title',
         'publish',
         'price',
@@ -18,6 +27,7 @@ class PostAdmin(admin.ModelAdmin):
         'title',
         'body'
     )
+    form = PostAdminForm
 
 
 admin.site.register(Post, PostAdmin)

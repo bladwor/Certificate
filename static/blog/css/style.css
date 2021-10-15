@@ -43,7 +43,7 @@ ul {
 
 p {
   margin: 0;
-  padding-top: 10px;
+  margin-bottom: 10px;
 }
 
 nav a {
@@ -237,7 +237,7 @@ button.close-submenu::after {
   max-width: 1170px;
   background: #fff;
   margin: 0 auto;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding: 20px 30px;
 }
 

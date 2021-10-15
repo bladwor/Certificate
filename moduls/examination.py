@@ -61,7 +61,6 @@ class Examination:
                                              servise_name['client_email'],
                                              servise_name['client_phone'],
                                              )
-
         code_reserv_two = SQLserver.code_reserv()
 
         for code in code_reserv_two:

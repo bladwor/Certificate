@@ -66,4 +66,4 @@ class Examination_code(View):
 class Email(View):
     @staticmethod
     def get(request, *args, **kwargs):
-        return render(request, 'blog/email.html')
+        return render(request, 'blog/email2.html')

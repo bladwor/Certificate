@@ -5,7 +5,7 @@
 	<div class="title">{{ post.title }}</div>
 	<div class="certificate-wrap">
 		<img class="certificate-img" src="/media/{{ post.image }}" alt="">
-		<div class="certificate-item">{{ post.body }}</div>
+		<div class="certificate-item">{{ post.body|safe }}</div>
 	</div>
 
 </div>
@@ -32,11 +32,11 @@
 					<label class="label">Ваш телефон: *</label>
 					<input class="write" type='text' name='client_phone' value='' required="required" />
 				</div>
-				<div class="form">
+				<div class="form" style="display: none;">
 					<label class="label">orderid</label>
 					<input class="write" type='text' name='orderid' value='{{ code }}' />
 				</div>
-				<div class="form" style="display: nones;">
+				<div class="form" style="display: none;">
 					<label class="label">service_name</label>
 					<input class="write" type='text' name='service_name' value='{{ post.title }}' />
 				</div>

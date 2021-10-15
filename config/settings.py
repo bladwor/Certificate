@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar.apps.DebugToolbarConfig',
+
+    'ckeditor',
+    'ckeditor_uploader',
     'blog.apps.BlogConfig',
 ]
 
@@ -128,12 +131,16 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
 
 # Загружаемые пользователями файлы
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CKEDITOR_UPLOAD_PATH = os.path.join(BASE_DIR, 'media/uploads/')
 
 INTERNAL_IPS = [
     '127.0.0.1',
