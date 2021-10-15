@@ -3,7 +3,9 @@ import email.message
 
 
 class Message:
-    def message_true(code, name_cert, name, price, mail):
+    '''Класс отсылки сообщей о платежах'''
+    def message_true(code: str, name_cert: str, name: str, price: str, mail: str):
+        '''Платеж успешен > отправка письма сертификата пользователю с qr-кодом о покупке'''
 
         email_content = """
             <html>
@@ -1256,7 +1258,8 @@ class Message:
 
         s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))
 
-    def message_true_service(code, name_cert, clientid, price, mail, phone):
+    def message_true_service(code: str, name_cert: str, clientid: str, price: str, mail: str, phone: str):
+        '''Сервисное письмо менеджеру о покупке сертификата'''
 
         text = (f"Был приобретен {name_cert} №{code} номиналом {price}&nbsp;руб. <br>"
                 f"Данные покупателя: <br>"
@@ -1280,5 +1283,4 @@ class Message:
         # Login Credentials for sending the mail
         s.login(msg['From'], password)
 
-        s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))        
-
+        s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))

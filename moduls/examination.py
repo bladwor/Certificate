@@ -1,18 +1,19 @@
-from datetime import date
-
-from blog.models import Post
-
 from . sqlserver import SQLserver
 from . paykiper import Paykiper
 from . qrcode import QRcode
 from . stmpmail import Message
 
-import sys
-import os
-
 
 class Examination:
+    '''
+        Проверка платежей и зарезервированных кодов сертификата
+        если зарезервированый код фигурирует в платежах то меняем статус на куплен 
+        отсылаем письмо покупателю о покупке и сервисное письмо менеджеру.
+        если зарезервированный код не фигурирует в платежной системе то меняем ему статус на свободен
+    '''
     def update_status():
+        '''обновление статуса'''
+        
         code_reserv = SQLserver.code_reserv()
         last_order = Paykiper.last_order()
 

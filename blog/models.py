@@ -4,6 +4,8 @@ from django.urls import reverse
 
 
 class Post(models.Model):
+    '''Модель сертификатов в виде постов'''
+    
     STATUS_CHOICES = (
         ('draft', 'Draft'),
         ('published', 'Published'),

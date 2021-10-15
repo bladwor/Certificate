@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'nc*!-ibr3o@o+6)=r&c&4jmb@y74i(jkfzlc*an8)lo*)@l@!@'
+SECRET_KEY = 'nc*!-ibr3o@o+6)=r&c&4jmb@y74i(jkfzlc*an8)lo*)@l@!@1@##'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,10 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'debug_toolbar.apps.DebugToolbarConfig',
 
+    'debug_toolbar.apps.DebugToolbarConfig',
     'ckeditor',
     'ckeditor_uploader',
+
     'blog.apps.BlogConfig',
 ]
 
@@ -56,13 +57,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
-#print(os.path.join(BASE_DIR, 'templates'))
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            #'/Users/admin/PycharmProjects/hotellock/templates',
             os.path.join(BASE_DIR, 'templates'),
         ],
         'APP_DIRS': True,
@@ -134,7 +133,6 @@ STATICFILES_DIRS = [
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
-
 # Загружаемые пользователями файлы
 
 MEDIA_URL = '/media/'
@@ -145,4 +143,3 @@ CKEDITOR_UPLOAD_PATH = os.path.join(BASE_DIR, 'media/uploads/')
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
-
