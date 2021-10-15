@@ -1,6 +1,9 @@
 .*
+.vscode/
 !./gitignore
-
 __pycache__/
-
 venv/
+static/
+!static/blog/
+!static/blog/pol_isp.pdf
+qrimg/.png*
