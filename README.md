@@ -16,18 +16,19 @@
     <li>Работа с эквайринговой системой электронных платежей Paykiper</li>
     <li>Публикация и редактирование информации по сертификата (в виде постов)</li>
 </ol>
+
 <p>
-    pip list
+    PIP list
 </p>
-    <li>Django</li>
-    <li>django-ckeditor</li>
-    <li>django-debug-toolbar</li>
-    <li>gunicorn</li>
-    <li>Pillow</li>
-    <li>pyodbc</li>
-    <li>qrcode</li>
-    <li>requests</li>
-</ul>
+
+    Django
+    django-ckeditor
+    django-debug-toolbar
+    gunicorn
+    Pillow
+    pyodbc
+    qrcode
+    requests
 
 <p>
     Установка драйверов для взаимодействия с SQL Server-2019 MS
