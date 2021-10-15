@@ -60,8 +60,3 @@
     echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
     source ~/.bashrc
     # optional: for unixODBC development headers
-<<<<<<< HEAD
-    sudo apt-get install -y unixodbc-dev
-=======
-    sudo apt-get install -y unixodbc-dev
->>>>>>> 6942f7a1e6c5d7cae90f202a39c0f81a60cf2f22
