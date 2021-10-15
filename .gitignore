@@ -6,5 +6,3 @@ venv/
 static/admin/
 static/ckeditor/
 static/debug_toolbar
-
-qrimg/.png
