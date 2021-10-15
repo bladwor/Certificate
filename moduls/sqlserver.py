@@ -5,10 +5,10 @@ import datetime
 
 class SQLserver:
     def connect():
-        server = '89.221.58.60'
-        database = 'Card_System'
-        username = 'extcrm'
-        password = 'Crm2020!'
+        server = '####'
+        database = '####'
+        username = '####'
+        password = '####'
         cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
         return cnxn.cursor()
 

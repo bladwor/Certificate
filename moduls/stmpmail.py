@@ -1242,13 +1242,13 @@ class Message:
         msg = email.message.Message()
         msg['Subject'] = name_cert
 
-        msg['From'] = "hostmaster@turandot-palace.ru"
+        msg['From'] = "####"
         msg['To'] = mail
-        password = "ERqomcPr2njK8X"
+        password = "####"
         msg.add_header('Content-Type', 'text/html')
         msg.set_payload(email_content)
 
-        s = smtplib.SMTP('smtp-pulse.com:587')
+        s = smtplib.SMTP('####')
         s.starttls()
 
         # Login Credentials for sending the mail
@@ -1268,13 +1268,13 @@ class Message:
         msg = email.message.Message()
         msg['Subject'] = f'Приобретен {name_cert} №{code}'
 
-        msg['From'] = "hostmaster@turandot-palace.ru"
-        msg['To'] = "welcome@turandot-palace.ru"
-        password = "ERqomcPr2njK8X"
+        msg['From'] = "####"
+        msg['To'] = "####"
+        password = "####"
         msg.add_header('Content-Type', 'text/html')
         msg.set_payload(email_content)
 
-        s = smtplib.SMTP('smtp-pulse.com:587')
+        s = smtplib.SMTP('####')
         s.starttls()
 
         # Login Credentials for sending the mail
