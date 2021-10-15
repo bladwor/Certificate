@@ -979,7 +979,7 @@ class Message:
                                                                                             style="padding-left:28px;padding-right:16px;padding-top:7px;padding-bottom:5px;">
                                                                                             <p
                                                                                                 style="font-weight:normal;line-height:1.2;padding:0;">
-                                                                                                <span style="font-size: 36px;"><b>""" + name + """,
+                                                                                                <span style="font-size: 36px;"><b style="box-sizing:border-box;width: 100%;display: block;text-align: center;">""" + name + """,
                                                                                                         поздравляем!</b></span>
                                                                                             </p>
                                                                                                 <span style="font-weight: 400;">
@@ -1269,7 +1269,7 @@ class Message:
         msg['Subject'] = f'Приобретен {name_cert} №{code}'
 
         msg['From'] = "hostmaster@turandot-palace.ru"
-        msg['To'] = mail # ""
+        msg['To'] = "welcome@turandot-palace.ru"
         password = "ERqomcPr2njK8X"
         msg.add_header('Content-Type', 'text/html')
         msg.set_payload(email_content)

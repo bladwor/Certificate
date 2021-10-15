@@ -15,8 +15,9 @@
 <div class="container">
     <form method='POST' action='https://turandotpalace.server.paykeeper.ru/create/'>
         <div class="active">
-            <label class="label" for="sum">СУММА ОПЛАТЫ</label>
-            <input class="sum" type='text' name='sum' value='{{ post.price }}' readonly />
+            <label class="label" for="sum">СУММА ОПЛАТЫ</label> {% if post.price != '' %}
+            <input class="sum" type='text' name='sum' value='{{ post.price }}' readonly /> {% endif%} {% if post.price == '' %}
+            <input class="sum" type='text' name='sum' value='{{ post.price }}' /> {% endif%}
         </div>
         <fieldset class="contact-form">
             <legend class="form-title">Контактные данные</legend>

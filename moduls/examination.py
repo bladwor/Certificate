@@ -25,16 +25,18 @@ class Examination:
                         people_id = SQLserver.people_id(code_reserv[code])
                         SQLserver.update_balans(people_id, last_order[order]['pay_amount'])
                         servise_name = Paykiper.servis_name(last_order[order]['id'])
-                        Message.message_true(code_reserv[code],
+                        tmp = last_order[order]['pay_amount']
+                        price = tmp[:-3]
+                        Message.message_true(str(code_reserv[code]),
                                              servise_name['service_name'],
-                                             last_order[order]['clientid'],
-                                             last_order[order]['pay_amount'][:-3],
-                                             servise_name['client_email'],
+                                             str(last_order[order]['clientid']),
+                                             price,
+                                             servise_name['client_email']
                                              )
-                        Message.message_true_service(code_reserv[code],
+                        Message.message_true_service(str(code_reserv[code]),
                                              servise_name['service_name'],
                                              last_order[order]['clientid'],
-                                             (last_order[order]['pay_amount'][:-3]),
+                                             price,
                                              servise_name['client_email'],
                                              servise_name['client_phone'],
                                              )
@@ -48,16 +50,18 @@ class Examination:
                         people_id = SQLserver.people_id(code_reserv[code])
                         SQLserver.update_balans(people_id, last_order[order]['pay_amount'])
                         servise_name = Paykiper.servis_name(last_order[order]['id'])
-                        Message.message_true(code_reserv[code],
+                        tmp = last_order[order]['pay_amount']
+                        price = tmp[:-3]
+                        Message.message_true(str(code_reserv[code]),
                                              servise_name['service_name'],
-                                             last_order[order]['clientid'],
-                                             last_order[order]['pay_amount'],
-                                             servise_name['client_email'],
+                                             str(last_order[order]['clientid']),
+                                             price,
+                                             servise_name['client_email']
                                              )
-                        Message.message_true_service(code_reserv[code],
+                        Message.message_true_service(str(code_reserv[code]),
                                              servise_name['service_name'],
                                              last_order[order]['clientid'],
-                                             (last_order[order]['pay_amount']),
+                                             price,
                                              servise_name['client_email'],
                                              servise_name['client_phone'],
                                              )

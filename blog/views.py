@@ -29,9 +29,12 @@ class Certificat_page(View):
         except Post.DoesNotExist:
             return error_404(request)
 
+        posts = Post.objects.filter(status = 'published')
+
         code = SQLserver.code_certificat()
 
         context = {
+            'posts': posts,
             'post': post,
             'code': code[0]['card_code'],
         }
@@ -47,15 +50,23 @@ class Politic_page(View):
 class Success_page(View):
     @staticmethod
     def get(request, *args, **kwargs):
+        posts = Post.objects.filter(status = 'published')
+        context = {
+            'posts': posts,
+        }
         Examination.update_status()
-        return render(request, 'blog/success.html')
+        return render(request, 'blog/success.html', context)
 
 
 class Failed_page(View):
     @staticmethod
     def get(request, *args, **kwargs):
+        posts = Post.objects.filter(status = 'published')
+        context = {
+            'posts': posts,
+        }
         Examination.update_status()
-        return render(request, 'blog/failed.html')
+        return render(request, 'blog/failed.html', context)
 
 class Examination_code(View):
     @staticmethod

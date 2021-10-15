@@ -1283,10 +1283,10 @@ class Message:
         s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))        
 
 
-# code = '400009'
-# name_cert = 'Сертификат на посещения ресторана Турандот'
-# name = 'Дмитрий Воронов'
-# price = '10000.00'
-# mail = 'dmitriy.woronow@gmail.com'
+code = '400009'
+name_cert = 'Сертификат на посещения ресторана Турандот'
+name = 'Дмитрий Воронов'
+price = '10000.00'
+mail = 'dmitriy.woranow@yandex.ru'
 
-# Message.sert_mail(code, name_cert, name, price[:-3], mail)
+Message.message_true(code, name_cert, name, price[:-3], mail)
