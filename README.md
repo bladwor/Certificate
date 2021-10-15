@@ -32,6 +32,7 @@
 <p>
     Установка драйверов для взаимодействия с SQL Server-2019 MS
 </p>
+    
     sudo su
     curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 
