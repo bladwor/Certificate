@@ -1,9 +1,8 @@
-<h1 align="center">Сервис по покупке сертификатов.</h1>
+<h1 align="center">Сервис по покупке сертификатов</h1>
 <p align="center">
-
-    <img src="https://img.shields.io/badge/python-v3.8-blue?style=for-the-badge">
-    <img src="https://img.shields.io/badge/django%20versions-3.0-blue?style=for-the-badge" alt="">
-    <img src="https://img.shields.io/badge/SQL-2019-?style=for-the-badge" alt="">
+<img src="https://img.shields.io/badge/python-v3.8-blue?style=for-the-badge">
+<img src="https://img.shields.io/badge/django%20versions-3.0-blue?style=for-the-badge" alt="">
+<img src="https://img.shields.io/badge/SQL-2019-?style=for-the-badge" alt="">
 </p>
 ---
 <p>
