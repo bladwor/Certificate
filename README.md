@@ -3,6 +3,8 @@
 <img src="https://img.shields.io/badge/python-v3.8-blue?style=for-the-badge">
 <img src="https://img.shields.io/badge/django%20versions-3.0-blue?style=for-the-badge" alt="">
 <img src="https://img.shields.io/badge/SQL-MS--2019-blue?style=for-the-badge" alt="">
+<img src="https://img.shields.io/badge/HTML-blue?style=for-the-badge" alt="">
+<img src="https://img.shields.io/badge/CSS-blue?style=for-the-badge" alt="">
 </p>
 <p>
     В проекте есть следующие модули:
@@ -17,12 +19,12 @@
 <p>
     pip list
 </p>
-    <li>Django               3.2.8</li>li>
-    <li>django-ckeditor      6.1.0</li>li>
-    <li>django-debug-toolbar 3.2.2</li>li>
-    <li>gunicorn             20.1.0</li>li>
-    <li>Pillow               8.3.2</li>li>
-    <li>pyodbc               4.0.32</li>li>
-    <li>qrcode               7.3.1</li>li>
-    <li>requests             2.26.0</li>li>
+    <li>Django               3.2.8</li>
+    <li>django-ckeditor      6.1.0</li>
+    <li>django-debug-toolbar 3.2.2</li>
+    <li>gunicorn             20.1.0</li>
+    <li>Pillow               8.3.2</li>
+    <li>pyodbc               4.0.32</li>
+    <li>qrcode               7.3.1</li>
+    <li>requests             2.26.0</li>
 </ul>
