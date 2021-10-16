@@ -9,5 +9,7 @@ urlpatterns = [
     path('failed/', Failed_page.as_view(), name='failed'),
     path('examination/', Examination_code.as_view(), name='examination'),
     path('politic/', Politic_page.as_view(), name='politic'),
+    
+    # шаблон электронного письма для внутреннего использования
     # path('email/', Email.as_view(), name='email'),
 ]

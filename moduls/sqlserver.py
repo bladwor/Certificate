@@ -19,7 +19,7 @@ class SQLserver:
         return cnxn.cursor()
 
     def code_certificat():
-        '''Получение и резервирование в системе свободного кода сертификата'''
+        '''Получение и резервирование в системе свободного номера сертификата'''
 
         cursor = SQLserver.connect()
         cursor.execute("SELECT TOP 1 card_code, people_id, status FROM card_cards "
@@ -36,7 +36,7 @@ class SQLserver:
         res = [dict(zip(keys, block)) for block in tmp]
         code = res[0]['card_code']
 
-        '''присвоение зарезервированому коду сертификата статуса занят'''
+        '''присвоение зарезервированому номеру сертификата статуса занят'''
         SQLserver.update_status(code, 4)
 
         cursor.close()
@@ -55,8 +55,8 @@ class SQLserver:
         '''
             Установление даты действия сертификата в 1 год с даты покупки
             Из за особенности обновления даты в БД SQL 2019 
-            мы берем текущую дату и вычисляем разницу в днях с 1900-01-01
-            прибавлем 1 год в днях и данное число передаем в обновления поля в БД
+            мы берем текущую дату и вычисляем разницу в днях с 1900-01-01,
+            прибавлем 1 год в днях и данное число передаем в БД
             получая обновления даты действия в один год с момента покупки
         '''
 
@@ -80,7 +80,7 @@ class SQLserver:
         cursor.close()
 
     def update_status_data(code, status):
-        '''Получаем статус определённо кода сертификата'''
+        '''Получаем список номеров с определенным статусом'''
 
         cursor = SQLserver.connect()
         cursor.execute(
@@ -91,7 +91,7 @@ class SQLserver:
         SQLserver.update_data_code(code)
 
     def code_reserv():
-        '''Получаем все зарезервированные коды сертификатов'''
+        '''Получаем все зарезервированные номера сертификатов'''
 
         cursor = SQLserver.connect()
         cursor.execute("SELECT card_code FROM card_cards "
@@ -109,7 +109,7 @@ class SQLserver:
         return tmp
 
     def people_id(code):
-        '''Получаем уникальный идентификатор кода сертификата'''
+        '''Получаем уникальный идентификатор сертификата'''
 
         cursor = SQLserver.connect()
         cursor.execute(
@@ -122,7 +122,7 @@ class SQLserver:
         return people_id
 
     def update_balans(people_id, balans):
-        '''Обновляем баланс карты пользователя после покупки сертификата''''
+        '''Обновляем баланс карты пользователя после покупки сертификата'''
 
         cursor = SQLserver.connect()
         cursor.execute(

@@ -1,7 +1,7 @@
 from . sqlserver import SQLserver
 from . paykiper import Paykiper
 from . qrcode import QRcode
-from . stmpmail import Message
+from . smtpmail import Message
 
 
 class Examination:

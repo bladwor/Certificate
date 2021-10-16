@@ -59,10 +59,10 @@ class Paykiper:
         REQUEST_URL = f"/info/options/byid/"
 
         # Логин и пароль любого пользователя личного кабинета
-        user = "admin"
-        pw = "bd1853b412d1"
+        user = "####"
+        pw = "####"
         # имя или IP-адрес вашего сервера с PayKeeper
-        domain = "turandotpalace.server.paykeeper.ru"
+        domain = "####"
 
         # В качестве аргумента скрипта указывается идентификатор платежа
         # (первый столбец в разделе "Платежи" личного кабинета PayKeeper)

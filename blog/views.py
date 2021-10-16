@@ -9,10 +9,12 @@ from moduls.examination import Examination
 
 
 class Blog_page(View):
-    '''Отрисовка главной страницы'''
+    '''Главная страница'''
 
     @staticmethod
     def get(request):
+        '''Вывод всех опубликованных сертификатов'''
+        
         try:
             posts = Post.objects.filter(status='published')
         except Post.DoesNotExist:
@@ -26,10 +28,12 @@ class Blog_page(View):
 
 
 class Certificat_page(View):
-    '''Отрисока сертификата и резервирование его кода из БД'''
+    '''Страница сертификата'''
 
     @staticmethod
-    def get(request, id, *args, **kwargs):
+    def get(request, id):
+        '''Вывод сертификата и присвоение в форму оплаты название и резервирование номера'''
+
         try:
             post = Post.objects.get(status='published', pk=id)
         except Post.DoesNotExist:
@@ -37,7 +41,7 @@ class Certificat_page(View):
 
         posts = Post.objects.filter(status='published')
 
-        '''вытаскиваем свободный код из БД'''
+        '''Получаем номер свободного сертификата и резервируем его для пользователя'''
         code = SQLserver.code_certificat()
 
         context = {
@@ -58,7 +62,7 @@ class Politic_page(View):
 
 
 class Success_page(View):
-    '''Страница если оплата прошла успешно'''
+    '''Оплата прошла успешно'''
 
     @staticmethod
     def get(request):
@@ -73,7 +77,7 @@ class Success_page(View):
 
 
 class Failed_page(View):
-    '''Страницы об ошибке при оплате'''
+    '''Ошибка при оплате'''
 
     @staticmethod
     def get(request):
@@ -88,8 +92,7 @@ class Failed_page(View):
 
 class Examination_code(View):
     '''
-        Страница куда сервис екваиринга шлет уведомления по платежам
-        Так же скрипт cronexam.py из cron по таймингу шлет get запрос на проверку платежей
+        Получение уведомлений от платежной системы после транзакции
     '''
 
     @staticmethod
@@ -100,10 +103,10 @@ class Examination_code(View):
 
 class Email(View):
     '''
-        Отрисовка шаблона emeal письма, 
-        что получает пользователь при успешной оплате
+        Email шаблон пользовательского письма
+        для внутреннего использования
     '''
 
     @staticmethod
-    def get(request, *args, **kwargs):
+    def get(request):
         return render(request, 'blog/email2.html')
