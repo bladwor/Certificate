@@ -22,7 +22,7 @@ class Examination:
             for order in range(len(last_order)):
                 if str(last_order[order]['orderid']) == str(code_reserv[code]):
                     if last_order[order]['status'] == 'success' and last_order[order]['status'] == 'stuck':
-                        Examination.sert_update(code_reserv, last_order)
+                        Examination.sert_update(code_reserv, last_order, order, code)
                     if last_order[order]['status'] == 'pending':
                         break
                     if last_order[order]['status'] == 'failed':
@@ -39,7 +39,7 @@ class Examination:
         for code in code_reserv_two:
             SQLserver.update_status(code, 2)
 
-    def sert_update():
+    def sert_update(code_reserv, last_order, order, code):
         '''Проверка статуса'''
 
         SQLserver.update_status_data(last_order[order]['orderid'], 1)

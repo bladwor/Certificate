@@ -4,8 +4,8 @@ from django.views import View
 from .models import Post
 from blog.service import error_404
 
-from moduls.sqlserver import SQLserver
-from moduls.examination import Examination
+from modules.sqlserver import SQLserver
+from modules.examination import Examination
 
 
 class Blog_page(View):
