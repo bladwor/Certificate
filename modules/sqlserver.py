@@ -122,16 +122,12 @@ class SQLserver:
         return people_id
 
     def update_balans(people_id, balans):
-        '''Обновляем баланс карты пользователя после покупки сертификата'''
-
         cursor = SQLserver.connect()
-        cursor.execute(
-            f"SELECT TOP 1 PEOPLE_ACCOUNT_ID FROM CARD_PEOPLE_ACCOUNTS WHERE PEOPLE_ID = {people_id} AND BALANCE = 0")
+        cursor.execute(f"SELECT TOP 1 PEOPLE_ACCOUNT_ID FROM CARD_PEOPLE_ACCOUNTS WHERE PEOPLE_ID = {people_id} AND BALANCE = 0 AND ACCOUNT_TYPE_ID = 215")
         tmp = cursor.fetchone()
+        print(tmp[0])
         cursor.close()
-
         cursor = SQLserver.connect()
-        cursor.execute(
-            f"UPDATE CARD_PEOPLE_ACCOUNTS SET BALANCE = {balans}  WHERE PEOPLE_ACCOUNT_ID = {tmp[0]} AND BALANCE = 0")
+        cursor.execute(f"UPDATE CARD_PEOPLE_ACCOUNTS SET BALANCE = {balans}  WHERE PEOPLE_ACCOUNT_ID = {tmp[0]} AND BALANCE = 0 AND ACCOUNT_TYPE_ID = 215"")
         cursor.commit()
         cursor.close()
